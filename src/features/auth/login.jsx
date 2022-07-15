@@ -25,7 +25,9 @@ function Login() {
 
   const handleAuthSubmit = (event) => {
     event.preventDefault();
-    console.log(credential);
+    // console.log(credential);
+
+    setCredential(initialState);
   };
 
   return (
