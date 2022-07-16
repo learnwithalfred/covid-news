@@ -1,15 +1,21 @@
 import React from 'react';
-import Navbar from './components/navbar';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Login from './features/auth/login';
+import NewsIndexPage from './features/news/NewsIndexPage';
+import NewsDetailsPage from './features/news/NewsDetailsPage';
+import NewsCategoryPage from './features/news/NewsCategoryPage';
 
 function App() {
   return (
     <>
-      <Navbar />
-      <h1>header goes here</h1>
-      <div style={{ fontSize: 24 }}>App js</div>
-      <button type="button" className="btn btn-primary">
-        Click me
-      </button>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/news" element={<NewsIndexPage />} />
+          <Route path="/news/:category" element={<NewsCategoryPage />} />
+          <Route path="/news/:category/:name" element={<NewsDetailsPage />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

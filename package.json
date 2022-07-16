@@ -1,8 +1,14 @@
 {
-  "name": "air-pollution",
+  "name": "news",
   "version": "0.1.0",
   "description": "In this project, we will develop an application to check air pollution data anywhere on the globe. You can check the forecast and historical air pollution data for any coordinates on the globe. We will build it using react, redux, firebase, react-test-library ",
   "main": "src/index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
   "private": true,
   "keywords": [
     "pollution",
@@ -15,7 +21,7 @@
   "author": "https://github.com/learnwithalfred/learnwithalfred",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/learnwithalfred/air-polution/issues"
+    "url": "https://github.com/learnwithalfred/news-app/issues"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
@@ -45,12 +51,6 @@
     "stylelint-csstree-validator": "^1.9.0",
     "stylelint-scss": "^3.21.0",
     "url-loader": "^4.1.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
