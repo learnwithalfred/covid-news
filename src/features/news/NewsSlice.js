@@ -10,7 +10,7 @@ export const fetchNews = createAsyncThunk(
   async (category) => {
     const response = await axios.get(`${URL}${category}`);
     return response.data.data;
-  }
+  },
 );
 
 const initialState = {
