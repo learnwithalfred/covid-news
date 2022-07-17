@@ -7,6 +7,7 @@ import { fetchNews } from '../features/news/NewsSlice';
 const Categories = (props) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
   Categories.propTypes = {
     name: PropTypes.string.isRequired,
     imgUrl: PropTypes.string.isRequired,
