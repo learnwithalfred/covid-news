@@ -21,6 +21,7 @@ const NewsIndexPage = () => {
   } else if (newsStatus === 'failed') {
     bookContent = <p>{error}</p>;
   }
+
   return (
     <div>
       <h1>this is the news age</h1>

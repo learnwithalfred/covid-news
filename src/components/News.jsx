@@ -1,11 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { selectAllNews, showPostDetails } from '../features/news/NewsSlice';
 
 const NewsContent = (props) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const news = useSelector(selectAllNews);
+
   const {
     id, author, time, date, content, imgUrl,
   } = props;
-  console.log(props);
 
   NewsContent.propTypes = {
     id: PropTypes.string.isRequired,
@@ -17,7 +23,9 @@ const NewsContent = (props) => {
   };
 
   const handleReadMore = (id) => {
-    console.log(id, 'clicked');
+    const response = news.filter((data) => data.id === id);
+    dispatch(showPostDetails(response));
+    navigate(`/news/${id}/details`);
   };
 
   return (

@@ -17,13 +17,18 @@ const initialState = {
   news: [],
   status: 'idle',
   error: null,
+  newsDetail: null,
 };
 
 const newsSlice = createSlice({
   name: 'news',
   initialState,
   // add any action that don't require api request
-  reducers: {},
+  reducers: {
+    showPostDetails: (state, action) => {
+      state.newsDetail = action.payload;
+    },
+  },
   // add any action the require API request
   extraReducers: (builder) => {
     builder
@@ -44,5 +49,7 @@ const newsSlice = createSlice({
 export const selectAllNews = (state) => state.news.news;
 export const getNewsStatus = (state) => state.news.status;
 export const getNewsError = (state) => state.news.error;
+export const getNewsDetails = (state) => state.news.newsDetail;
+export const { showPostDetails } = newsSlice.actions;
 
 export default newsSlice.reducer;

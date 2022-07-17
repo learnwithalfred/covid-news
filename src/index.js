@@ -22,7 +22,7 @@ root.render(
         <Route path="/home" element={<App />} />
         <Route path="/news" element={<NewsIndexPage />} />
         <Route path="/news/:category" element={<NewsCategoryPage />} />
-        <Route path="/news/:category/:name" element={<NewsDetailsPage />} />
+        <Route path="/news/:id/details" element={<NewsDetailsPage />} />
       </Routes>
     </BrowserRouter>
   </Provider>,
