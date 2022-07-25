@@ -1,9 +1,11 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { getNewsDetails } from './NewsSlice';
 
 const NewsDetailsPage = () => {
   const news = useSelector(getNewsDetails);
+  const navigate = useNavigate();
 
   const renderNewsDetail = news.map((data) => (
     <div key={data.id}>
@@ -26,7 +28,9 @@ const NewsDetailsPage = () => {
                 <a href={data.url} target="_blank" rel="noopener noreferrer">{data.author}</a>
               </span>
               <p className="lead mt-4">{data.content}</p>
-              <a className="mb-4 pb-4" target="blank" href={data.url}>Read more ...</a>
+              <a className="mb-4 pb-4" target="blank" href={data.url}>
+                Read more ...
+              </a>
             </div>
             <div className="col-md-6">
               <img
@@ -38,15 +42,32 @@ const NewsDetailsPage = () => {
               />
             </div>
           </div>
+          <nav className="blog-pagination" aria-label="Pagination">
+            <button
+              className="btn btn-outline-info rounded-pill px-4"
+              type="button"
+              onClick={() => navigate(-1)}
+              style={{
+                width: 150,
+              }}
+            >
+              <img
+                style={{
+                  color: 'white',
+                  fontSize: '2rem',
+                  margin: '0 5px',
+                }}
+                src="/assets/arrow-left.svg"
+                alt="go back"
+              />
+              Go back
+            </button>
+          </nav>
         </div>
       </main>
     </div>
   ));
 
-  return (
-    <div>
-      {renderNewsDetail}
-    </div>
-  );
+  return <div>{renderNewsDetail}</div>;
 };
 export default NewsDetailsPage;

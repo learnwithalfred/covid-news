@@ -102,7 +102,7 @@ const NewsCategoryPage = () => {
                   style={{
                     width: 150,
                   }}
-                  className="btn btn-outline-primary rounded-pill d-flex justify-content-center"
+                  className="btn btn-outline-info rounded-pill d-flex justify-content-center"
                 >
                   <img
                     style={{
