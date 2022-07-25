@@ -10,40 +10,47 @@ const Categories = (props) => {
 
   Categories.propTypes = {
     name: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
     imgUrl: PropTypes.string.isRequired,
   };
 
-  const { name, imgUrl, title } = props;
+  const { name, imgUrl } = props;
 
   const handleClick = (name) => {
     dispatch(fetchNews(name));
     navigate(`/news/${name}`);
   };
   return (
-    <div
-      style={{
-        backgroundSize: 'cover',
-        backgroundPosition: 'center center',
-        border: 'none',
-        color: 'white',
-        height: 400,
-        backgroundImage: `linear-gradient( to right, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.62) 50%,  rgba(0, 0, 0, 0.84)100%), url("${imgUrl}")`,
-      }}
-    >
-      <button
-        type="button"
+    <div className="col">
+      <div
+        className="card shadow-sm"
         style={{
-          fontSize: '6rem',
-          padding: '24px',
+          backgroundPosition: 'center center',
           border: 'none',
-          background: 'transparent',
           color: 'white',
+          height: 200,
+          backgroundImage: `linear-gradient( to right, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.62) 50%,  rgba(0, 0, 0, 0.84)100%), url("${imgUrl}")`,
         }}
-        onClick={() => handleClick(name)}
       >
-        {title}
-      </button>
+        <button
+          type="button"
+          style={{
+            fontSize: '2rem',
+            border: 'none',
+            background: 'transparent',
+            color: 'white',
+            margin: '0 auto',
+          }}
+          onClick={() => handleClick(name)}
+        >
+          {name}
+        </button>
+        <div className="card-body">
+          <p className="text-center">
+            This is a wider card with supporting text below as a natural lead-in
+            to additional content. This content is a little bit longer.
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
