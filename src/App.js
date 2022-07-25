@@ -1,14 +1,34 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+// import ReactLoading from 'react-loading';
+import {
+  selectAllCovidData,
+  getCovidStatus,
+  // getCovidError,
+  fetchCovidData,
+} from './features/covid/covidSlice';
 import Categories from './components/Categories';
-import CategoriesData from './Utils/CategoriesData';
+// import CategoriesData from './Utils/CategoriesData';
 
 const App = () => {
-  const renderCategories = CategoriesData.map((data) => (
+  const dispatch = useDispatch();
+  const covidData = useSelector(selectAllCovidData);
+  const loadingStatus = useSelector(getCovidStatus);
+  // const error = useSelector(getCovidError);
+
+  useEffect(() => {
+    if (loadingStatus === 'idle') {
+      dispatch(fetchCovidData());
+    }
+  }, [loadingStatus, dispatch]);
+  // console.log(covidData);
+
+  const renderCategories = covidData.map((data) => (
     <Categories
-      name={data.name}
-      title={data.title}
-      imgUrl={data.imgUrl}
-      key={data.name}
+      abbreviation={data.abbreviation ? data.abbreviation : 'GH'}
+      country={data.item_id}
+      confirmed={data.confirmed}
+      key={data.country}
     />
   ));
 
@@ -16,7 +36,6 @@ const App = () => {
     <div>
       <main className="container py-5">
         <h1>24 latest news</h1>
-
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit.
           Necessitatibus, nobis. Quod quas tempore exercitationem modi excepturi
