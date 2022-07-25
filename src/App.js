@@ -28,6 +28,7 @@ const App = () => {
       abbreviation={data.abbreviation ? data.abbreviation : 'GH'}
       country={data.item_id}
       confirmed={data.confirmed}
+      deaths={data.deaths}
       key={data.country}
     />
   ));

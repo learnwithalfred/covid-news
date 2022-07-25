@@ -1,0 +1,26 @@
+.countries-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.countries-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+@media screen and (max-width: 769px) {
+  .countries-content {
+    flex-direction: row;
+  }
+}
