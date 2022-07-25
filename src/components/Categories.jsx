@@ -1,14 +1,18 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import ReactCountryFlag from 'react-country-flag';
 import PropTypes from 'prop-types';
-import { fetchNews } from '../features/news/NewsSlice';
+import {
+  selectAllCovidData,
+  getCountryDetails,
+} from '../features/covid/covidSlice';
 import './Category.css';
 
 const Categories = (props) => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const covidData = useSelector(selectAllCovidData);
 
   Categories.propTypes = {
     abbreviation: PropTypes.string.isRequired,
@@ -22,8 +26,10 @@ const Categories = (props) => {
   } = props;
 
   const handleClick = (name) => {
-    dispatch(fetchNews(name));
-    navigate(`/news/${name}`);
+    const response = covidData.filter((data) => data.item_id === name);
+    dispatch(getCountryDetails(response));
+
+    navigate(`/country/${name}`);
   };
   return (
     <div className="card bg-dark">
@@ -43,11 +49,10 @@ const Categories = (props) => {
           <button
             type="button"
             style={{
-              fontSize: '1rem',
+              fontSize: '2rem',
               border: 'none',
               background: 'transparent',
               color: 'white',
-              margin: '0 auto',
             }}
             onClick={() => handleClick(country)}
           >

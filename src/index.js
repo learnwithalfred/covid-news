@@ -8,6 +8,7 @@ import store from './app/store';
 
 import './index.css';
 import App from './App';
+import CovidDetailsPage from './features/covid/covidDetails';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
@@ -18,6 +19,7 @@ root.render(
       <Routes>
         <Route exact path="/" element={<App />} />
         <Route path="/news/:category" element={<NewsCategoryPage />} />
+        <Route path="/country/:name" element={<CovidDetailsPage />} />
         <Route path="/news/:id/details" element={<NewsDetailsPage />} />
       </Routes>
     </BrowserRouter>

@@ -26,14 +26,18 @@ const initialState = {
   covid: [],
   status: 'idle',
   error: null,
-  covidDetail: null,
+  covidDetail: [],
 };
 
 const covidSlice = createSlice({
   name: 'covid',
   initialState,
   // add any action that don't require api request
-  reducers: {},
+  reducers: {
+    getCountryDetails: (state, action) => {
+      state.covidDetail = action.payload;
+    },
+  },
   // add any action the require API request
   extraReducers: (builder) => {
     builder
@@ -56,6 +60,6 @@ export const selectAllCovidData = (state) => state.covid.covid;
 export const getCovidStatus = (state) => state.covid.status;
 export const getCovidError = (state) => state.covid.error;
 export const getCovidDetails = (state) => state.covid.covidDetail;
-export const { showPostDetails } = covidSlice.actions;
+export const { getCountryDetails } = covidSlice.actions;
 
 export default covidSlice.reducer;
