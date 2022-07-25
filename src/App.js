@@ -24,13 +24,15 @@ const App = () => {
   // console.log(covidData);
 
   const renderCategories = covidData.map((data) => (
-    <Categories
-      abbreviation={data.abbreviation ? data.abbreviation : 'GH'}
-      country={data.item_id}
-      confirmed={data.confirmed}
-      deaths={data.deaths}
-      key={data.country}
-    />
+    <div key={data.item_id}>
+      <Categories
+        abbreviation={data.abbreviation ? data.abbreviation : 'GH'}
+        country={data.item_id}
+        confirmed={data.confirmed}
+        deaths={data.deaths}
+        covidData={covidData}
+      />
+    </div>
   ));
 
   return (
