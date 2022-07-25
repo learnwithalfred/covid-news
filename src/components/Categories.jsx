@@ -10,10 +10,11 @@ const Categories = (props) => {
 
   Categories.propTypes = {
     name: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
     imgUrl: PropTypes.string.isRequired,
   };
 
-  const { name, imgUrl } = props;
+  const { name, imgUrl, title } = props;
 
   const handleClick = (name) => {
     dispatch(fetchNews(name));
@@ -41,7 +42,7 @@ const Categories = (props) => {
         }}
         onClick={() => handleClick(name)}
       >
-        {name}
+        {title}
       </button>
     </div>
   );

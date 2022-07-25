@@ -68,13 +68,17 @@ const NewsCategoryPage = () => {
         }}
         onClick={() => handleClick(data.name)}
       >
-        {data.name}
+        {data.title}
       </button>
     </li>
   ));
 
   const { category } = useParams();
-  const pageHeader = `${category} News`;
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+  const pageHeader = `${capitalizeFirstLetter(category)} News`;
+
   return (
     <div>
       <>

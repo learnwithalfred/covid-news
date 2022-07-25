@@ -4,7 +4,12 @@ import CategoriesData from './Utils/CategoriesData';
 
 const App = () => {
   const renderCategories = CategoriesData.map((data) => (
-    <Categories name={data.name} imgUrl={data.imgUrl} key={data.name} />
+    <Categories
+      name={data.name}
+      title={data.title}
+      imgUrl={data.imgUrl}
+      key={data.name}
+    />
   ));
 
   return (
