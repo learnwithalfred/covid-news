@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import ReactLoading from 'react-loading';
 import { useParams } from 'react-router-dom';
 import NewsContent from '../../components/News';
 import { selectAllNews, getNewsStatus, getNewsError } from './NewsSlice';
@@ -11,7 +12,15 @@ const NewsCategoryPage = () => {
 
   let newsContent = '';
   if (newsStatus === 'loading') {
-    newsContent = <h2>Loading...</h2>;
+    newsContent = (
+      <div
+        style={{
+          margin: '2rem auto',
+        }}
+      >
+        <ReactLoading type="spin" color="blue" height={100} width={100} />
+      </div>
+    );
   } else if (newsStatus === 'succeeded') {
     newsContent = news.map((data) => (
       <div key={data.id}>
@@ -32,7 +41,7 @@ const NewsCategoryPage = () => {
   const { category } = useParams();
   const pageHeader = `${category} News`;
   return (
-    <div>
+    <div className="container">
       NewsCategoryPage
       <h1>{pageHeader}</h1>
       {newsContent}

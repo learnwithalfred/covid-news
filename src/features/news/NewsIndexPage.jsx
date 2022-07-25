@@ -24,6 +24,7 @@ const NewsIndexPage = () => {
 
   return (
     <div>
+
       <h1>this is the news age</h1>
       all news goes here
       {bookContent}
