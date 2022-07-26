@@ -27,6 +27,8 @@ const initialState = {
   status: 'idle',
   error: null,
   covidDetail: [],
+  searchResults: [],
+  pageTitle: '',
 };
 
 const covidSlice = createSlice({
@@ -36,6 +38,10 @@ const covidSlice = createSlice({
   reducers: {
     getCountryDetails: (state, action) => {
       state.covidDetail = action.payload;
+    },
+    searchData: (state, action) => {
+      state.searchResults = action.payload;
+      state.pageTitle = 'Search Results';
     },
   },
   // add any action the require API request
@@ -48,6 +54,7 @@ const covidSlice = createSlice({
         state.status = 'succeeded';
         // console.log(action.payload);
         state.covid = action.payload;
+        state.pageTitle = 'All covid data';
       })
       .addCase(fetchCovidData.rejected, (state, action) => {
         state.status = 'failed';
@@ -60,6 +67,8 @@ export const selectAllCovidData = (state) => state.covid.covid;
 export const getCovidStatus = (state) => state.covid.status;
 export const getCovidError = (state) => state.covid.error;
 export const getCovidDetails = (state) => state.covid.covidDetail;
-export const { getCountryDetails } = covidSlice.actions;
+export const getSearchResults = (state) => state.covid.searchResults;
+export const getPageTitle = (state) => state.covid.pageTitle;
+export const { getCountryDetails, searchData } = covidSlice.actions;
 
 export default covidSlice.reducer;

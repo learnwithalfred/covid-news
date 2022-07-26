@@ -18,8 +18,8 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route exact path="/" element={<App />} />
-        <Route path="/news/:category" element={<NewsCategoryPage />} />
-        <Route path="/country/:name" element={<CovidDetailsPage />} />
+        <Route exact path="/news/:category" element={<NewsCategoryPage />} />
+        <Route exact path="/country/:name" element={<CovidDetailsPage />} />
         <Route path="/news/:id/details" element={<NewsDetailsPage />} />
       </Routes>
     </BrowserRouter>
