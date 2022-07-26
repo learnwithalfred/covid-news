@@ -52,7 +52,6 @@ const covidSlice = createSlice({
       })
       .addCase(fetchCovidData.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        // console.log(action.payload);
         state.covid = action.payload;
         state.pageTitle = 'All covid data';
       })

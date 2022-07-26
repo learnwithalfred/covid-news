@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import FuzzySearch from 'fuzzy-search';
 import { selectAllCovidData, searchData } from '../features/covid/covidSlice';
@@ -8,7 +7,7 @@ function Navbar() {
   const initialState = { search: '' };
   const [search, setSearch] = useState(initialState);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const covidData = useSelector(selectAllCovidData);
 
@@ -31,7 +30,7 @@ function Navbar() {
       );
       const result = searcher.search(data);
       dispatch(searchData(result));
-      navigate('/');
+      // navigate('/');
       setSearch(initialState);
     }
     return false;
@@ -50,16 +49,12 @@ function Navbar() {
     // eslint-disable-next-line implicit-arrow-linebreak
     continents.map((continent) => (
       <li key={continent}>
-        <button type="button" className="dropdown-item">
-          <li>
-            <button
-              type="button"
-              className="dropdown-item"
-              onClick={() => handleSubmitSearch(continent)}
-            >
-              {continent}
-            </button>
-          </li>
+        <button
+          type="button"
+          className="dropdown-item"
+          onClick={() => handleSubmitSearch(continent)}
+        >
+          {continent}
         </button>
       </li>
     ));
@@ -73,9 +68,9 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
-        <Link className="navbar-brand" to="/">
+        <a className="navbar-brand" href="/">
           Covid 19 Tracker
-        </Link>
+        </a>
         <button
           className="navbar-toggler"
           type="button"
@@ -100,7 +95,10 @@ function Navbar() {
               >
                 Search Continent Data
               </a>
-              <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+              <ul
+                className="dropdown-menu dropdown-menu-dark"
+                aria-labelledby="navbarDropdown"
+              >
                 {renderContinents()}
               </ul>
             </li>
