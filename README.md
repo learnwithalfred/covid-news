@@ -1,8 +1,11 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
+# Covid-19 tracker App
 
-# Air Pollution Metrics App
+![image](public/assets/1.jpeg)
+> In this project, we will develop an application to check covid 19 metrics data anywhere on the globe. You can check and historical covid 19 metrics data for any country on the globe. We will build it using react, redux, firebase, react-test-library
 
-> In this project, we will develop an application to check air pollution data anywhere on the globe. You can check the forecast and historical air pollution data for any coordinates on the globe. We will build it using react, redux, firebase, react-test-library
+## Live link
+
+[https://alfred-covid-19-tracker-102.netlify.app](https://alfred-covid-19-tracker-102.netlify.app)
 
 ## Built With
 
@@ -25,8 +28,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Run the following command to get a working version locally
 
-- `git clone https://github.com/learnwithalfred/air-polution.git`
-- `cd air-polution`
+- `git clone https://github.com/learnwithalfred/covid-news.git`
+- `cd covid-news`
 - `npm install`
 - `npm start`
 
@@ -56,8 +59,9 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
+- API used from [M-Media-Group](https://github.com/M-Media-Group/Covid-19-API)
+- Design from [Behanace](https://www.behance.net/sakwadesignstudio)
+- Inspiration from [Microverse BootCamp](https://www.microverse.org)
 - etc
 
 ## 📝 License

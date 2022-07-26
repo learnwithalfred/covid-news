@@ -1,0 +1,179 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Covid should render correctly should render correctly 1`] = `
+<div>
+  <div>
+    <nav
+      class="navbar navbar-expand-lg navbar-dark bg-dark"
+    >
+      <div
+        class="container"
+      >
+        <a
+          class="navbar-brand"
+          href="/"
+        >
+          Covid 19 Tracker
+        </a>
+        <button
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          class="navbar-toggler"
+          data-bs-target="#navbarSupportedContent"
+          data-bs-toggle="collapse"
+          type="button"
+        >
+          <span
+            class="navbar-toggler-icon"
+          />
+        </button>
+        <div
+          class="collapse navbar-collapse"
+          id="navbarSupportedContent"
+        >
+          <ul
+            class="navbar-nav me-auto mb-2 mb-lg-0"
+          >
+            <li
+              class="nav-item dropdown"
+            >
+              <a
+                aria-expanded="false"
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                href="/"
+                id="navbarDropdown"
+                role="button"
+              >
+                Search Continent Data
+              </a>
+              <ul
+                aria-labelledby="navbarDropdown"
+                class="dropdown-menu dropdown-menu-dark"
+              >
+                <li>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                  >
+                    Africa
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                  >
+                    Asia
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                  >
+                    Europe
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                  >
+                    North America
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                  >
+                    Oceania
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                  >
+                    South America
+                  </button>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <div
+            class="d-flex"
+          >
+            <input
+              aria-label="Search"
+              class="form-control me-2"
+              name="search"
+              placeholder="Search"
+              type="search"
+              value=""
+            />
+            <button
+              class="btn btn-primary me-2"
+              type="submit"
+            >
+              Search
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <main
+      class="container py-5"
+    >
+      <h1 />
+      <div
+        class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"
+      >
+        <div
+          style="margin: 2rem auto;"
+        >
+          <div
+            style="fill: white; height: 100px; width: 100px;"
+          >
+            <svg
+              viewBox="0 0 32 32"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              
+  
+              <path
+                d="M16 0 A16 16 0 0 0 16 32 A16 16 0 0 0 16 0 M16 4 A12 12 0 0 1 16 28 A12 12 0 0 1 16 4"
+                opacity=".25"
+              />
+              
+  
+              <path
+                d="M16 0 A16 16 0 0 1 32 16 L28 16 A12 12 0 0 0 16 4z"
+              >
+                
+    
+                <animatetransform
+                  attributeName="transform"
+                  dur="0.8s"
+                  from="0 16 16"
+                  repeatCount="indefinite"
+                  to="360 16 16"
+                  type="rotate"
+                />
+                
+  
+              </path>
+              
+
+            </svg>
+            
+
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+`;

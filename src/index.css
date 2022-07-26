@@ -1,7 +1,13 @@
-* {
+:root {
+  --primary-color: #ec4c8a;
+  --white: #ffff;
+}
+
+body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  color: black;
+  color: rgb(255, 255, 255);
+  background-color: rgb(67, 105, 178);
 }
