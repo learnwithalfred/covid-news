@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import ReactCountryFlag from 'react-country-flag';
 
 import { getCovidDetails } from './covidSlice';
-import Navbar from '../../components/navbar';
 
 const CovidDetailsPage = () => {
   const covidData = useSelector(getCovidDetails);
@@ -101,7 +100,6 @@ const CovidDetailsPage = () => {
 
   return (
     <div>
-      <Navbar />
       {renderCovidDetails}
     </div>
   );

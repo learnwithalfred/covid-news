@@ -19,6 +19,7 @@ const CovidIndex = () => {
   const error = useSelector(getCovidError);
   const pageTitle = useSelector(getPageTitle);
   const searchResults = useSelector(getSearchResults);
+  const dataToRender = searchResults.length > 0 ? searchResults : covidData;
 
   useEffect(() => {
     if (loadingStatus === 'idle') {
@@ -38,7 +39,6 @@ const CovidIndex = () => {
       </div>
     );
   } else if (loadingStatus === 'succeeded') {
-    const dataToRender = searchResults.length > 0 ? searchResults : covidData;
     newsContent = dataToRender.map((data) => (
       <div key={data.item_id}>
         <Categories
