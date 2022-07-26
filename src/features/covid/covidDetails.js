@@ -49,6 +49,14 @@ const CovidDetailsPage = () => {
                     <th scope="row">Confirmed Cases</th>
                     <td>{data.confirmed}</td>
                   </tr>
+                  <tr>
+                    <th scope="row">Recovered</th>
+                    <td>{data.recovered}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Deaths</th>
+                    <td>{data.deaths}</td>
+                  </tr>
                 </tbody>
               </table>
             </div>

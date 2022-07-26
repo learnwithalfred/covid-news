@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import FuzzySearch from 'fuzzy-search';
 import { selectAllCovidData, searchData } from '../features/covid/covidSlice';
@@ -8,27 +8,33 @@ function Navbar() {
   const initialState = { search: '' };
   const [search, setSearch] = useState(initialState);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const covidData = useSelector(selectAllCovidData);
 
   const handleSubmitSearch = (data) => {
-    const searcher = new FuzzySearch(
-      covidData,
-      [
-        'item_id',
-        'deaths',
-        'country',
-        'continent',
-        'capital_city',
-        'confirmed',
-        'abbreviation',
-      ],
-      {
-        caseSensitive: false,
-      },
-    );
-    const result = searcher.search(data);
-    dispatch(searchData(result));
-    setSearch(initialState);
+    if (data) {
+      const searcher = new FuzzySearch(
+        covidData,
+        [
+          'item_id',
+          'deaths',
+          'country',
+          'continent',
+          'capital_city',
+          'confirmed',
+          'abbreviation',
+        ],
+        {
+          caseSensitive: false,
+        },
+      );
+      const result = searcher.search(data);
+      dispatch(searchData(result));
+      navigate('/');
+      setSearch(initialState);
+    }
+    return false;
   };
 
   const continents = [
@@ -65,10 +71,7 @@ function Navbar() {
   };
 
   return (
-    <nav
-      className="navbar navbar-expand-lg navbar-dark bg-dark"
-
-    >
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
         <Link className="navbar-brand" to="/">
           Covid 19 Tracker
