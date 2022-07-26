@@ -3,6 +3,10 @@
 ![image](public/assets/1.jpeg)
 > In this project, we will develop an application to check covid 19 metrics data anywhere on the globe. You can check and historical covid 19 metrics data for any country on the globe. We will build it using react, redux, firebase, react-test-library
 
+## Live link
+
+[https://alfred-covid-19-tracker-102.netlify.app](https://alfred-covid-19-tracker-102.netlify.app)
+
 ## Built With
 
 - JavaScript, HTML, CSS
